@@ -1,8 +1,9 @@
-class RegistrationModel {
+class HotelModel {
   // Identity & Status
   final String uid;
-  final String? profileImage;
-  final String? verificationStatus;
+  final String profileImage;
+  final String profileId;
+  final String verificationStatus;
 
   // Contact Info
   final String contactNumber;
@@ -16,6 +17,8 @@ class RegistrationModel {
 
   // Property Details
   final String stayName;
+  final String basePrice;
+  final String hotelDescription;
   final String accommodationType;
   final String propertyType;
   final bool entireProperty;
@@ -37,11 +40,12 @@ class RegistrationModel {
   // Images
   final List<String> images;
 
-  RegistrationModel({
+  HotelModel({
     // Identity
     required this.uid,
-    this.profileImage,
-    this.verificationStatus,
+    required this.profileImage,
+    required this.profileId,
+    required this.verificationStatus,
 
     // Contact Info
     required this.contactNumber,
@@ -55,6 +59,8 @@ class RegistrationModel {
 
     // Property Details
     required this.stayName,
+    required this.basePrice,
+    required this.hotelDescription,
     required this.accommodationType,
     required this.propertyType,
     required this.entireProperty,
@@ -81,6 +87,7 @@ class RegistrationModel {
     return {
       'uid': uid,
       'profileImage': profileImage,
+      'profileId': profileId,
       'verificationStatus': verificationStatus,
       'contactNumber': contactNumber,
       'email': email,
@@ -89,6 +96,8 @@ class RegistrationModel {
       'country': country,
       'pincode': pincode,
       'stayName': stayName,
+      'basePrice': basePrice,
+      'hotelDescription': hotelDescription,
       'accommodationType': accommodationType,
       'propertyType': propertyType,
       'entireProperty': entireProperty,
@@ -106,44 +115,34 @@ class RegistrationModel {
     };
   }
 
-  factory RegistrationModel.fromJson(Map<String, dynamic> json) {
-    return RegistrationModel(
-      // Identity
-      uid: json['uid'] ?? '',
+  factory HotelModel.fromJson(Map<String, dynamic> json) {
+    return HotelModel(
+      uid: json['uid'],
       profileImage: json['profileImage'],
+      profileId: json['profileId'],
       verificationStatus: json['verificationStatus'],
-
-      // Contact Info
-      contactNumber: json['contactNumber'] ?? '',
-      email: json['email'] ?? '',
-
-      // Location
-      city: json['city'] ?? '',
-      state: json['state'] ?? '',
-      country: json['country'] ?? '',
-      pincode: json['pincode'] ?? '',
-
-      // Property Details
-      stayName: json['stayName'] ?? '',
-      accommodationType: json['accommodationType'] ?? '',
-      propertyType: json['propertyType'] ?? '',
-      entireProperty: json['entireProperty'] ?? false,
-      privateProperty: json['privateProperty'] ?? false,
-      restaurantInsideProperty: json['restaurantInsideProperty'] ?? false,
-      parking: json['parking'] ?? false,
-
-      // Business Details
-      hasRegistration: json['hasRegistration'] ?? '',
-      panNumber: json['panNumber'] ?? '',
-      propertyNumber: json['propertyNumber'] ?? '',
-      gstNumber: json['gstNumber'] ?? '',
-
-      // Preferences
+      contactNumber: json['contactNumber'],
+      email: json['email'],
+      city: json['city'],
+      state: json['state'],
+      country: json['country'],
+      pincode: json['pincode'],
+      stayName: json['stayName'],
+      basePrice: json['basePrice'],
+      hotelDescription: json['hotelDescription'],
+      accommodationType: json['accommodationType'],
+      propertyType: json['propertyType'],
+      entireProperty: json['entireProperty'],
+      privateProperty: json['privateProperty'],
+      restaurantInsideProperty: json['restaurantInsideProperty'],
+      parking: json['parking'],
+      hasRegistration: json['hasRegistration'],
+      panNumber: json['panNumber'],
+      propertyNumber: json['propertyNumber'],
+      gstNumber: json['gstNumber'],
       selectedYear: json['selectedYear'],
-      freeCancellation: json['freeCancellation'] ?? false,
-      coupleFriendly: json['coupleFriendly'] ?? false,
-
-      // Images
+      freeCancellation: json['freeCancellation'],
+      coupleFriendly: json['coupleFriendly'],
       images: List<String>.from(json['images'] ?? []),
     );
   }

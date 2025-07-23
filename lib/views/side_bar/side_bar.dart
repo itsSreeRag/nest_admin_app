@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:nest_admin_app/constants/colors.dart';
-import 'package:nest_admin_app/views/new_dashboard/new_dashboard.dart' hide divider, actionColor;
 import 'package:sidebarx/sidebarx.dart';
 
 class MySideBar extends StatelessWidget {
@@ -15,14 +14,18 @@ class MySideBar extends StatelessWidget {
       theme: SidebarXTheme(
         margin: const EdgeInsets.all(10),
         decoration: BoxDecoration(
-          color: AppColors.primary,
+          color: AppColors.white,
           borderRadius: BorderRadius.circular(20),
         ),
-        hoverColor: AppColors.primary,
+        hoverColor: AppColors.primary.withAlpha(150),
         textStyle: TextStyle(
-          color: AppColors.white.withAlpha((0.7 * 255).toInt()),
+          color: AppColors.primary,
+          fontWeight: FontWeight.w500,
         ),
-        selectedTextStyle: const TextStyle(color: AppColors.white),
+        selectedTextStyle: const TextStyle(
+          color: AppColors.white,
+          fontWeight: FontWeight.w500,
+        ),
         hoverTextStyle: const TextStyle(
           color: AppColors.white,
           fontWeight: FontWeight.w500,
@@ -31,14 +34,14 @@ class MySideBar extends StatelessWidget {
         selectedItemTextPadding: const EdgeInsets.only(left: 30),
         itemDecoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: AppColors.primary),
+          // border: Border.all(color: AppColors.primary),
         ),
         selectedItemDecoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           border: Border.all(
             color: actionColor.withAlpha((0.37 * 255).toInt()),
           ),
-          gradient: const LinearGradient(
+          gradient: LinearGradient(
             colors: [AppColors.primary, AppColors.primary],
           ),
           boxShadow: [
@@ -48,19 +51,20 @@ class MySideBar extends StatelessWidget {
             ),
           ],
         ),
-        iconTheme: IconThemeData(
-          color: AppColors.white.withAlpha((0.7 * 255).toInt()),
+        iconTheme: IconThemeData(color: AppColors.primary, size: 20),
+        selectedIconTheme: const IconThemeData(
+          color: AppColors.white,
           size: 20,
         ),
-        selectedIconTheme: const IconThemeData(color: AppColors.white, size: 20),
       ),
       extendedTheme: const SidebarXTheme(
         width: 200,
-        decoration: BoxDecoration(color: AppColors.primary),
+        decoration: BoxDecoration(color: AppColors.white),
       ),
       footerDivider: divider,
       headerBuilder: (context, extended) {
-        return SizedBox(
+        return Container(
+          decoration: BoxDecoration(color: AppColors.primary),
           height: 100,
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -76,7 +80,10 @@ class MySideBar extends StatelessWidget {
       items: [
         const SidebarXItem(icon: Icons.dashboard_outlined, label: 'Dashboard'),
         const SidebarXItem(icon: Icons.apartment_outlined, label: 'Hotel List'),
-        const SidebarXItem(icon: Icons.lock_person_outlined,label: 'Permissions',),
+        const SidebarXItem(
+          icon: Icons.lock_person_outlined,
+          label: 'Permissions',
+        ),
         const SidebarXItem(icon: Icons.bar_chart_outlined, label: 'Reports'),
       ],
     );

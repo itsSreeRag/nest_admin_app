@@ -1,4 +1,4 @@
-import 'package:nest_admin_app/models/registration_model.dart';
+import 'package:nest_admin_app/models/hotel_model.dart';
 
 abstract class HotelEvent {}
 
@@ -11,7 +11,7 @@ class SubscribeToHotels extends HotelEvent {}
 
 // Add a new event for handling updates
 class HotelsUpdated extends HotelEvent {
-  final List<RegistrationModel> hotels;
+  final List<HotelModel> hotels;
 
   HotelsUpdated(this.hotels);
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nest_admin_app/views/dashboard/analytics_overview/analytics_overview.dart';
-import 'package:nest_admin_app/views/dashboard/analytics_overview/calender_section.dart';
+import 'package:nest_admin_app/views/dashboard_page/widgets/analytics_overview.dart';
+import 'package:nest_admin_app/views/dashboard_page/widgets/calender_section.dart';
 import 'package:nest_admin_app/views/dashboard/status_info_card/status_info_card_list.dart';
 
 class DashboardContent extends StatelessWidget {

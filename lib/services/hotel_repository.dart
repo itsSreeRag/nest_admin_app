@@ -1,24 +1,24 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:nest_admin_app/models/registration_model.dart';
+import 'package:nest_admin_app/models/hotel_model.dart';
 
-class HotelRepository {
+class HotelFirebaseServices {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  Stream<List<RegistrationModel>> streamHotelData() {
+  Stream<List<HotelModel>> streamHotelData() {
     return _firestore.collectionGroup('profile').snapshots().map((snapshot) {
       return snapshot.docs.map((doc) {
-        return RegistrationModel.fromJson(doc.data());
+        return HotelModel.fromJson(doc.data());
       }).toList();
     });
   }
 
-  Future<List<RegistrationModel>> fetchHotelData() async {
+  Future<List<HotelModel>> fetchHotelData() async {
     try {
       // This will fetch all documents from any "profile" subcollection across all "hotels"
       final snapshot = await _firestore.collectionGroup('profile').get();
 
       return snapshot.docs.map((doc) {
-        return RegistrationModel.fromJson(doc.data());
+        return HotelModel.fromJson(doc.data());
       }).toList();
     } catch (e) {
       throw Exception('Failed to fetch hotel data: $e');

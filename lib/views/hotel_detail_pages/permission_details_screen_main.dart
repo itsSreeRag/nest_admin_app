@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nest_admin_app/constants/colors.dart';
 import 'package:nest_admin_app/controllers/hotels_bloc/hotel_bloc.dart';
 import 'package:nest_admin_app/controllers/hotels_bloc/hotel_state.dart';
-import 'package:nest_admin_app/models/registration_model.dart';
+import 'package:nest_admin_app/models/hotel_model.dart';
 import 'package:nest_admin_app/views/hotel_detail_pages/category_card.dart';
 import 'package:nest_admin_app/views/hotel_detail_pages/contact_details_card.dart';
 import 'package:nest_admin_app/views/hotel_detail_pages/facilitycard.dart';
@@ -14,8 +14,8 @@ import 'package:nest_admin_app/views/hotel_detail_pages/permission_headers.dart'
 import 'package:nest_admin_app/views/hotel_detail_pages/status_card.dart';
 
 class HotelDetailsScreen extends StatelessWidget {
-  final int index;
-  const HotelDetailsScreen({super.key, required this.index});
+  final String hotelId;
+  const HotelDetailsScreen({super.key, required this.hotelId});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,10 @@ class HotelDetailsScreen extends StatelessWidget {
                     if (state is HotelLoading) {
                       return const Center(child: CircularProgressIndicator());
                     } else if (state is HotelLoaded) {
-                      final hotel = state.hotels[index];
+                      final hotel = state.hotels.firstWhere(
+                        (hotel) => hotel.profileId == hotelId,
+                        orElse: () => throw Exception('Hotel not found'),
+                      );
                       return SingleChildScrollView(
                         padding: EdgeInsets.all(isWideScreen ? 20.0 : 12.0),
                         child: Column(
@@ -68,7 +71,7 @@ class HotelDetailsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildWideLayout(RegistrationModel hotelData) {
+  Widget _buildWideLayout(HotelModel hotelData) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -90,7 +93,6 @@ class HotelDetailsScreen extends StatelessWidget {
 
         const SizedBox(width: 20),
 
-
         Expanded(
           flex: 3,
           child: Column(
@@ -108,7 +110,7 @@ class HotelDetailsScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildNarrowLayout(bool isMediumScreen, RegistrationModel hotelData) {
+  Widget _buildNarrowLayout(bool isMediumScreen, HotelModel hotelData) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [

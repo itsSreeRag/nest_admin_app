@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:nest_admin_app/models/registration_model.dart';
+import 'package:nest_admin_app/models/hotel_model.dart';
 import 'package:nest_admin_app/views/hotel_detail_pages/facility_clip.dart';
 import 'package:nest_admin_app/views/hotel_detail_pages/permission_cards.dart';
 
 class Facilitycard extends StatelessWidget {
-  final RegistrationModel hotelData;
+  final HotelModel hotelData;
   const Facilitycard({super.key, required this.hotelData});
 
   @override

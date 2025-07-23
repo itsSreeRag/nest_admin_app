@@ -5,8 +5,8 @@ import 'package:nest_admin_app/views/side_bar/side_bar.dart';
 import 'package:nest_admin_app/views/side_bar/side_bar_screen.dart';
 import 'package:sidebarx/sidebarx.dart';
 
-class HomeScaffold extends StatelessWidget {
-  HomeScaffold({super.key});
+class SideBarMain extends StatelessWidget {
+  SideBarMain({super.key});
 
   final GlobalKey<ScaffoldState> _key = GlobalKey<ScaffoldState>();
   final controller = SidebarXController(selectedIndex: 0, extended: true);
@@ -16,6 +16,7 @@ class HomeScaffold extends StatelessWidget {
     final isSmallScreen = MediaQuery.of(context).size.width < 600;
 
     return Scaffold(
+      backgroundColor: AppColors.background,
       key: _key,
       appBar:
           isSmallScreen
@@ -42,8 +43,7 @@ class HomeScaffold extends StatelessWidget {
           ),
         ],
       ),
+
     );
   }
 }
-
-

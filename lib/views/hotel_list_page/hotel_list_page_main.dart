@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:nest_admin_app/views/permission_page/permission_pae_hotel_list.dart';
+import 'package:nest_admin_app/views/hotel_list_page/hotel_list.dart';
 import 'package:nest_admin_app/widgets/custom_page_heading.dart';
 
-class PermissionMain extends StatelessWidget {
-  const PermissionMain({super.key});
+class HotelListPageMain extends StatelessWidget {
+  const HotelListPageMain({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,9 +11,9 @@ class PermissionMain extends StatelessWidget {
       children: [
         // Header Section
         CustomPageHeding(
-          icon: Icons.admin_panel_settings,
-          title: 'Permission Management',
-          subTitle: 'Manage hotel access and user permissions',
+          icon: Icons.hotel,
+          title: 'Hotel List',
+          subTitle: 'View and manage hotel profiles',
         ),
         Expanded(
           child: Container(
@@ -32,7 +32,7 @@ class PermissionMain extends StatelessWidget {
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(16),
-              child: const PermissionPageHotelListScreen(),
+              child: const HotelListScreen(),
             ),
           ),
         ),

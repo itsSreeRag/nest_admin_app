@@ -1,4 +1,4 @@
-import 'package:nest_admin_app/models/registration_model.dart';
+import 'package:nest_admin_app/models/hotel_model.dart';
 
 abstract class HotelState {}
 
@@ -7,7 +7,7 @@ class HotelInitial extends HotelState {}
 class HotelLoading extends HotelState {}
 
 class HotelLoaded extends HotelState {
-  final List<RegistrationModel> hotels;
+  final List<HotelModel> hotels;
 
   HotelLoaded(this.hotels);
 }

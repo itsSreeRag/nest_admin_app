@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:nest_admin_app/controllers/hotels_bloc/hotel_bloc.dart';
+import 'package:nest_admin_app/controllers/hotels_bloc/hotel_event.dart';
 import 'package:nest_admin_app/controllers/verification_status_bloc/verification_status_bloc.dart';
 import 'package:nest_admin_app/controllers/verification_status_bloc/verification_status_event.dart';
 
@@ -20,12 +22,15 @@ class VerificationDropDown extends StatelessWidget {
         context.read<VerificationStatusBloc>().add(
           UpdateVerificationStatus(hotelUid: hotelUid, newStatus: value),
         );
+        context.read<HotelBloc>().add(
+          FetchHotels(),
+        );
       },
       itemBuilder:
           (context) => const [
             PopupMenuItem(value: 'Block', child: Text('Block')),
             PopupMenuItem(value: 'Pending', child: Text('Pending')),
-            PopupMenuItem(value: 'Approv', child: Text('Approv')),
+            PopupMenuItem(value: 'Approve', child: Text('Approve')),
           ],
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),

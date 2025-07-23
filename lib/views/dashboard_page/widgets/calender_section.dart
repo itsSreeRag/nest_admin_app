@@ -13,7 +13,7 @@ class CalendarSection extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withAlpha((0.1 * 255).toInt()),
+            color: Colors.grey.withOpacity(0.1),
             spreadRadius: 2,
             blurRadius: 5,
           ),

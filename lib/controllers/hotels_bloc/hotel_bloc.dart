@@ -1,14 +1,14 @@
 import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nest_admin_app/controllers/hotel_repository.dart';
+import 'package:nest_admin_app/services/hotel_repository.dart';
 import 'package:nest_admin_app/controllers/hotels_bloc/hotel_event.dart';
 import 'package:nest_admin_app/controllers/hotels_bloc/hotel_state.dart';
-import 'package:nest_admin_app/models/registration_model.dart';
+import 'package:nest_admin_app/models/hotel_model.dart';
 
 class HotelBloc extends Bloc<HotelEvent, HotelState> {
-  final HotelRepository repository;
-  StreamSubscription<List<RegistrationModel>>? _hotelsSubscription;
+  final HotelFirebaseServices repository;
+  StreamSubscription<List<HotelModel>>? _hotelsSubscription;
 
   HotelBloc(this.repository) : super(HotelInitial()) {
     // Handle one-time fetch

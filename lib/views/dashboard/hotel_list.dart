@@ -19,7 +19,7 @@ class HotelsList extends StatelessWidget {
         return LayoutBuilder(
           builder: (context, constraints) {
             bool isMobile = constraints.maxWidth < 600;
-    
+
             if (state is HotelLoading) {
               return const Center(child: CircularProgressIndicator());
             } else if (state is HotelLoaded) {
@@ -45,9 +45,7 @@ class HotelsList extends StatelessWidget {
                             if (!isMobile)
                               TextButton.icon(
                                 onPressed: () {},
-                                icon: const Icon(
-                                  Icons.file_download_outlined,
-                                ),
+                                icon: const Icon(Icons.file_download_outlined),
                                 label: const Text('Export'),
                                 style: TextButton.styleFrom(
                                   foregroundColor: Colors.blue,
@@ -56,7 +54,7 @@ class HotelsList extends StatelessWidget {
                           ],
                         ),
                       ),
-    
+
                       // Filters
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -65,12 +63,12 @@ class HotelsList extends StatelessWidget {
                                 ? const MobileFilters()
                                 : const DesktopFilters(),
                       ),
-    
+
                       const SizedBox(height: 16),
-    
+
                       // Table Header
                       TableHeader(isMobile: isMobile),
-    
+
                       // Hotel List
                       ListView.builder(
                         itemCount: state.hotels.length,
@@ -84,7 +82,10 @@ class HotelsList extends StatelessWidget {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => HotelDetailsScreen(index: index,),
+                                  builder:
+                                      (context) => HotelDetailsScreen(
+                                        hotelId: hotel.profileId,
+                                      ),
                                 ),
                               );
                             },
@@ -95,8 +96,7 @@ class HotelsList extends StatelessWidget {
                               rating: hotel.email,
                               location: hotel.state,
                               status: hotel.verificationStatus.toString(),
-                              statusColor:
-                                  'green', 
+                              statusColor: 'green',
                               isMobile: isMobile,
                             ),
                           );
