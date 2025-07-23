@@ -46,6 +46,10 @@ dependencies:
   firebase_storage: ^12.4.5
   cloud_firestore: ^5.6.6
   cached_network_image: ^3.4.1
+  meta: ^1.16.0
+  sidebarx: ^0.17.1
+  fl_chart: ^1.0.0
+  table_calendar: ^3.2.0
 
 dev_dependencies:
   flutter_test:

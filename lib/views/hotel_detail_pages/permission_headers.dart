@@ -36,29 +36,6 @@ class PageHeader extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
-                  // Row(
-                  //   mainAxisSize: MainAxisSize.min,
-                  //   children: [
-                  //     OutlinedButton(
-                  //       onPressed: () {},
-                  //       style: OutlinedButton.styleFrom(
-                  //         foregroundColor: Colors.red,
-                  //         side: const BorderSide(color: Colors.red),
-                  //         padding: const EdgeInsets.symmetric(horizontal: 20),
-                  //       ),
-                  //       child: const Text('Reject'),
-                  //     ),
-                  //     const SizedBox(width: 12),
-                  //     ElevatedButton(
-                  //       onPressed: () {},
-                  //       style: ElevatedButton.styleFrom(
-                  //         backgroundColor: Colors.blue,
-                  //         padding: const EdgeInsets.symmetric(horizontal: 20),
-                  //       ),
-                  //       child: const Text('Approve'),
-                  //     ),
-                  //   ],
-                  // ),
                   VerificationDropDown(
                     verificationSatus: status,
                     hotelUid: uid,
@@ -75,30 +52,6 @@ class PageHeader extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                   ),
                   const SizedBox(height: 12),
-                  // Row(
-                  //   children: [
-                  //     Expanded(
-                  //       child: OutlinedButton(
-                  //         onPressed: () {},
-                  //         style: OutlinedButton.styleFrom(
-                  //           foregroundColor: Colors.red,
-                  //           side: const BorderSide(color: Colors.red),
-                  //         ),
-                  //         child: const Text('Reject'),
-                  //       ),
-                  //     ),
-                  //     const SizedBox(width: 12),
-                  //     Expanded(
-                  //       child: ElevatedButton(
-                  //         onPressed: () {},
-                  //         style: ElevatedButton.styleFrom(
-                  //           backgroundColor: Colors.blue,
-                  //         ),
-                  //         child: const Text('Approve'),
-                  //       ),
-                  //     ),
-                  //   ],
-                  // ),
                 ],
               ),
 

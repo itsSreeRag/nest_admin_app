@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nest_admin_app/controllers/bloc/verification_status_bloc.dart';
-import 'package:nest_admin_app/controllers/bloc/verification_status_event.dart';
+import 'package:nest_admin_app/controllers/verification_status_bloc/verification_status_bloc.dart';
+import 'package:nest_admin_app/controllers/verification_status_bloc/verification_status_event.dart';
 
 class VerificationDropDown extends StatelessWidget {
   final String verificationSatus;
@@ -43,7 +43,8 @@ class VerificationDropDown extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            const Icon(Icons.arrow_drop_down, color: Colors.orange),
+            const Icon(
+              Icons.arrow_drop_down, color: Colors.orange),
           ],
         ),
       ),

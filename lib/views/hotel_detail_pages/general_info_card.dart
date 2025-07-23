@@ -13,7 +13,7 @@ class GeneralInfoCard extends StatelessWidget {
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Hotel name section
+
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -35,7 +35,7 @@ class GeneralInfoCard extends StatelessWidget {
           ),
           const SizedBox(height: 20),
 
-          // Document section
+
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

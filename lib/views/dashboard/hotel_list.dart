@@ -1,8 +1,8 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nest_admin_app/controllers/hotels/hotel_bloc.dart';
-import 'package:nest_admin_app/controllers/hotels/hotel_state.dart';
+import 'package:nest_admin_app/controllers/hotels_bloc/hotel_bloc.dart';
+import 'package:nest_admin_app/controllers/hotels_bloc/hotel_state.dart';
 import 'package:nest_admin_app/views/dashboard/widgets/my_list_tile.dart';
 import 'package:nest_admin_app/views/dashboard/widgets/mobile_filters.dart';
 import 'package:nest_admin_app/views/dashboard/widgets/desktop_filters.dart';
@@ -94,9 +94,9 @@ class HotelsList extends StatelessWidget {
                               category: hotel.accommodationType,
                               rating: hotel.email,
                               location: hotel.state,
-                              status: hotel.verificationSatus.toString(),
+                              status: hotel.verificationStatus.toString(),
                               statusColor:
-                                  'green', // Customize based on status if needed
+                                  'green', 
                               isMobile: isMobile,
                             ),
                           );

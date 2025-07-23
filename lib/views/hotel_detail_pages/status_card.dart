@@ -18,7 +18,7 @@ class StatusCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(4),
         ),
         child: Text(
-          hotelData.verificationSatus!,
+          hotelData.verificationStatus!,
           overflow: TextOverflow.ellipsis,
         ),
       ),

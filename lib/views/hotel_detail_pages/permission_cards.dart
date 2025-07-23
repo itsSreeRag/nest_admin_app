@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// Base card wrapper for consistent styling
+
 class BaseCard extends StatelessWidget {
   final String title;
   final Widget content;

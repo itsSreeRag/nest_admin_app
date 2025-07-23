@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nest_admin_app/constants/colors.dart';
-import 'package:nest_admin_app/controllers/auth/auth_bloc.dart';
+import 'package:nest_admin_app/controllers/auth_bloc/auth_bloc.dart';
 import 'package:nest_admin_app/views/dashboard/dashboard_main.dart';
 import 'package:nest_admin_app/widgets/my_button.dart';
 import 'package:nest_admin_app/widgets/my_custom_text_field.dart';

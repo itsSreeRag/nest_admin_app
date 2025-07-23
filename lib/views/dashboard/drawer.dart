@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:nest_admin_app/controllers/auth/auth_bloc.dart';
+import 'package:nest_admin_app/controllers/auth_bloc/auth_bloc.dart';
 import 'package:nest_admin_app/views/log_in_page/log_in_page_main.dart';
 import 'package:nest_admin_app/views/permission_page/permssion_main.dart';
 

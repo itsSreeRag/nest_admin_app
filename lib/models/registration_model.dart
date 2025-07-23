@@ -2,7 +2,7 @@ class RegistrationModel {
   // Identity & Status
   final String uid;
   final String? profileImage;
-  final String? verificationSatus;
+  final String? verificationStatus;
 
   // Contact Info
   final String contactNumber;
@@ -41,7 +41,7 @@ class RegistrationModel {
     // Identity
     required this.uid,
     this.profileImage,
-    this.verificationSatus,
+    this.verificationStatus,
 
     // Contact Info
     required this.contactNumber,
@@ -81,7 +81,7 @@ class RegistrationModel {
     return {
       'uid': uid,
       'profileImage': profileImage,
-      'verificationSatus': verificationSatus,
+      'verificationStatus': verificationStatus,
       'contactNumber': contactNumber,
       'email': email,
       'city': city,
@@ -111,7 +111,7 @@ class RegistrationModel {
       // Identity
       uid: json['uid'] ?? '',
       profileImage: json['profileImage'],
-      verificationSatus: json['verificationSatus'],
+      verificationStatus: json['verificationStatus'],
 
       // Contact Info
       contactNumber: json['contactNumber'] ?? '',

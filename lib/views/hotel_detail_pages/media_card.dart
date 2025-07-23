@@ -13,7 +13,7 @@ class MediaCard extends StatelessWidget {
       content: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Photos section
+
           const Text('Photo', style: TextStyle(color: Colors.grey)),
           const SizedBox(height: 12),
           LayoutBuilder(
@@ -24,7 +24,7 @@ class MediaCard extends StatelessWidget {
                       : 150.0;
 
               return SizedBox(
-                height: imageWidth * 0.53, // Set height for horizontal ListView
+                height: imageWidth * 0.53,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: hotelData.images.length,

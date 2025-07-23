@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:nest_admin_app/constants/colors.dart';
 import 'package:nest_admin_app/models/registration_model.dart';
-import 'package:nest_admin_app/views/dashboard/widgets/verification_drop_down.dart';
 
 class HotelLiseTile extends StatelessWidget {
   final RegistrationModel hotel;
@@ -11,6 +11,7 @@ class HotelLiseTile extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         return Card(
+          color: AppColors.background,
           margin: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
           child: Padding(
             padding: const EdgeInsets.all(12.0),
@@ -53,10 +54,10 @@ class HotelLiseTile extends StatelessWidget {
                 ),
                 // Status
                 // Status with Dropdown
-                VerificationDropDown(
-                  verificationSatus: hotel.verificationSatus!,
-                  hotelUid: hotel.uid,
-                ),
+                // VerificationDropDown(
+                //   verificationSatus: hotel.verificationStatus!,
+                //   hotelUid: hotel.uid,
+                // ),
 
                 SizedBox(width: 10),
                 // Date

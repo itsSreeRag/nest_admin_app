@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nest_admin_app/controllers/hotel_repository.dart';
-import 'package:nest_admin_app/controllers/hotels/hotel_event.dart';
-import 'package:nest_admin_app/controllers/hotels/hotel_state.dart';
+import 'package:nest_admin_app/controllers/hotels_bloc/hotel_event.dart';
+import 'package:nest_admin_app/controllers/hotels_bloc/hotel_state.dart';
 import 'package:nest_admin_app/models/registration_model.dart';
 
 class HotelBloc extends Bloc<HotelEvent, HotelState> {

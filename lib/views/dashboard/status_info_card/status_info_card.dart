@@ -1,23 +1,21 @@
 import 'package:flutter/material.dart';
 
-class DashboardCard extends StatelessWidget {
-  const DashboardCard({super.key});
+class StatusInfoCard extends StatelessWidget {
+  final String title;
+  final String value;
+  final IconData icon;
+  final Color color;
+
+  const StatusInfoCard({
+    super.key,
+    required this.title,
+    required this.value,
+    required this.icon,
+    required this.color,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      spacing: 16,
-      runSpacing: 16,
-      children: [
-        _statCard('Total Hotels', '48', Icons.business, Colors.teal),
-        _statCard('Active Bookings', '237', Icons.book_online, Colors.orange),
-        _statCard('Available Rooms', '152', Icons.meeting_room, Colors.blue),
-        _statCard('Revenue', '\$36,450', Icons.attach_money, Colors.green),
-      ],
-    );
-  }
-
-  Widget _statCard(String title, String value, IconData icon, Color color) {
     return Container(
       width: 200,
       height: 140,
@@ -29,7 +27,7 @@ class DashboardCard extends StatelessWidget {
             color: Colors.grey,
             spreadRadius: 1,
             blurRadius: 3,
-            offset: Offset(0, 2),
+            offset: const Offset(0, 2),
           ),
         ],
       ),

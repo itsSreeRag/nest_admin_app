@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nest_admin_app/constants/colors.dart';
-import 'package:nest_admin_app/controllers/hotels/hotel_bloc.dart';
-import 'package:nest_admin_app/controllers/hotels/hotel_state.dart';
+import 'package:nest_admin_app/controllers/hotels_bloc/hotel_bloc.dart';
+import 'package:nest_admin_app/controllers/hotels_bloc/hotel_state.dart';
 import 'package:nest_admin_app/models/registration_model.dart';
 import 'package:nest_admin_app/views/hotel_detail_pages/category_card.dart';
 import 'package:nest_admin_app/views/hotel_detail_pages/contact_details_card.dart';
@@ -39,16 +39,14 @@ class HotelDetailsScreen extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            // Page title and tabs
                             PageHeader(
                               hotelName: hotel.stayName,
-                              status: hotel.verificationSatus.toString(),
+                              status: hotel.verificationStatus.toString(),
                               uid: hotel.uid,
                             ),
 
                             const SizedBox(height: 20),
 
-                            // Content area with layout changes based on screen width
                             isWideScreen
                                 ? _buildWideLayout(hotel)
                                 : _buildNarrowLayout(isMediumScreen, hotel),
@@ -74,7 +72,6 @@ class HotelDetailsScreen extends StatelessWidget {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        // Left column - 70% width
         Expanded(
           flex: 7,
           child: Column(
@@ -93,7 +90,7 @@ class HotelDetailsScreen extends StatelessWidget {
 
         const SizedBox(width: 20),
 
-        // Right column - 30% width
+
         Expanded(
           flex: 3,
           child: Column(
@@ -123,7 +120,7 @@ class HotelDetailsScreen extends StatelessWidget {
         const SizedBox(height: 20),
         ContactDetailsCard(hotelData: hotelData),
         const SizedBox(height: 20),
-        // On medium screens, place category and status cards side by side
+
         isMediumScreen
             ? Row(
               crossAxisAlignment: CrossAxisAlignment.start,

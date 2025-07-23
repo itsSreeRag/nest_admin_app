@@ -43,7 +43,7 @@ class HotelRepository {
           .doc(hotelUid)
           .collection('profile')
           .doc(docId)
-          .update({'verificationSatus': newStatus});
+          .update({'verificationStatus': newStatus});
     }
   }
 }
