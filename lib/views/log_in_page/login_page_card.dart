@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:nest_admin_app/constants/colors.dart';
 import 'package:nest_admin_app/controllers/auth_bloc/auth_bloc.dart';
-import 'package:nest_admin_app/views/dashboard/dashboard_main.dart';
+import 'package:nest_admin_app/views/side_bar/side_bar_main.dart';
 import 'package:nest_admin_app/widgets/my_button.dart';
 import 'package:nest_admin_app/widgets/my_custom_text_field.dart';
 
@@ -20,7 +20,7 @@ class LoginPageCard extends StatelessWidget {
         if (state is AuthSuccess) {
           Navigator.pushReplacement(
             context,
-            MaterialPageRoute(builder: (context) => HotelAdminDashboard()),
+            MaterialPageRoute(builder: (context) => SideBarMain()),
           );
         } else if (state is AuthFailure) {
           ScaffoldMessenger.of(

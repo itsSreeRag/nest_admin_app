@@ -5,12 +5,14 @@ import 'package:nest_admin_app/constants/colors.dart';
 import 'package:nest_admin_app/controllers/auth_bloc/auth_bloc.dart';
 import 'package:nest_admin_app/controllers/report_bloc/report_bloc.dart';
 import 'package:nest_admin_app/controllers/report_bloc/report_event.dart';
+import 'package:nest_admin_app/controllers/report_status_bloc/report_status_bloc.dart';
 import 'package:nest_admin_app/controllers/verification_status_bloc/verification_status_bloc.dart';
 import 'package:nest_admin_app/controllers/hotels_bloc/hotel_bloc.dart';
 import 'package:nest_admin_app/services/hotel_repository.dart';
 import 'package:nest_admin_app/controllers/hotels_bloc/hotel_event.dart';
 import 'package:nest_admin_app/firebase_options.dart';
 import 'package:nest_admin_app/services/report_service.dart';
+import 'package:nest_admin_app/views/my_splash_screen/my_splash_screen.dart';
 import 'package:nest_admin_app/views/side_bar/side_bar_main.dart';
 
 void main() async {
@@ -37,8 +39,11 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider<ReportBloc>(
           create:
-              (_) => ReportBloc(ReportServices())..add(FetchReportsByUserId()),
+              (context) =>
+                  ReportBloc(ReportServices())..add(FetchReports()),
         ),
+
+        BlocProvider(create: (context) => ReportStatusBloc(ReportServices())),
       ],
       child: MaterialApp(
         title: 'SidebarX Example',
@@ -54,7 +59,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-        home: SideBarMain(),
+        home: MySplashScreen(),
       ),
     );
   }

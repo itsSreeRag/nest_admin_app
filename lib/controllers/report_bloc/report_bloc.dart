@@ -7,7 +7,7 @@ class ReportBloc extends Bloc<ReportEvent, ReportState> {
   final ReportServices reportServices;
 
   ReportBloc(this.reportServices) : super(ReportInitial()) {
-    on<FetchReportsByUserId>((event, emit) async {
+    on<FetchReports>((event, emit) async {
       emit(ReportLoading());
       try {
         final reports = await reportServices.fetchReportsByUserId();

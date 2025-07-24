@@ -3,6 +3,7 @@ import 'package:nest_admin_app/models/report_model.dart';
 import 'package:nest_admin_app/views/report_details/widgets/hotel_id_block.dart';
 import 'package:nest_admin_app/views/report_details/widgets/report_details_section.dart';
 import 'package:nest_admin_app/views/report_details/widgets/report_reason_section.dart';
+import 'package:nest_admin_app/views/report_details/widgets/report_status_card.dart';
 
 class ReportDetailsPage extends StatelessWidget {
   final ReportModel reportData;
@@ -64,10 +65,18 @@ class ReportDetailsPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             HotelIdBlock(hotelId: reportData.hotelId),
+            SizedBox(height: 20),
+            SizedBox(
+              width: 150,
+              child: ReportStatusCard(
+                reportId: reportData.reportId,
+                satus: reportData.status,
+              ),
+            ),
             SizedBox(height: 32),
             ReportReasonSection(reportData: reportData),
             SizedBox(height: 24),
-            ReportDetailsSection(reportData: reportData,),
+            ReportDetailsSection(reportData: reportData),
           ],
         ),
       ),

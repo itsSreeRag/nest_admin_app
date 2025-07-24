@@ -86,6 +86,7 @@ class MySideBar extends StatelessWidget {
         ),
         const SidebarXItem(icon: Icons.bar_chart_outlined, label: 'Reports'),
       ],
+      
     );
   }
 }

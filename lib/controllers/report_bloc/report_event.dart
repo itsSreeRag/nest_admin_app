@@ -1,6 +1,6 @@
 abstract class ReportEvent {}
 
-class FetchReportsByUserId extends ReportEvent {
+class FetchReports extends ReportEvent {
 
-  FetchReportsByUserId();
+  FetchReports();
 }
