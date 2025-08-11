@@ -13,7 +13,6 @@ import 'package:nest_admin_app/controllers/hotels_bloc/hotel_event.dart';
 import 'package:nest_admin_app/firebase_options.dart';
 import 'package:nest_admin_app/services/report_service.dart';
 import 'package:nest_admin_app/views/my_splash_screen/my_splash_screen.dart';
-import 'package:nest_admin_app/views/side_bar/side_bar_main.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -39,8 +38,7 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider<ReportBloc>(
           create:
-              (context) =>
-                  ReportBloc(ReportServices())..add(FetchReports()),
+              (context) => ReportBloc(ReportServices())..add(FetchReports()),
         ),
 
         BlocProvider(create: (context) => ReportStatusBloc(ReportServices())),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nest_admin_app/constants/colors.dart';
 
 class MyCustomTextFormField extends StatelessWidget {
   final TextEditingController controller;
@@ -58,8 +57,6 @@ class MyCustomTextFormField extends StatelessWidget {
       maxLength: maxlength,
       autovalidateMode: autovalidateMode,
       decoration: InputDecoration(
-        filled: true,
-        fillColor: AppColors.background,
         prefixText: prefixText,
         labelText: labelText,
         hintText: hintText,
