@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nest_admin_app/views/dashboard_page/dashboard_web_page/widgets/nav_items.dart';
+import 'package:nest_admin_app/views/dashboard_page/widgets/nav_items.dart';
 
 class DashWebNavBar extends StatelessWidget {
   const DashWebNavBar({super.key});

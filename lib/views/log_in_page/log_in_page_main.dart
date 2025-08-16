@@ -11,14 +11,14 @@ class LoginPageMain extends StatelessWidget {
       body: LayoutBuilder(
         builder: (context, constraints) {
           bool isMobile = constraints.maxWidth < 600;
-      
+
           if (isMobile) {
             return Center(child: LoginArea());
           } else {
             return Row(
-              children: [
-                LoginArea(),
-                ImageArea(),
+              children: const [
+                Expanded(child: LoginArea()),
+                Expanded(child: ImageArea()),
               ],
             );
           }

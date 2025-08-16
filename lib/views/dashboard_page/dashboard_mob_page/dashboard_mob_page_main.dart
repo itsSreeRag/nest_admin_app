@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:nest_admin_app/views/dashboard_page/dashboard_web_page/widgets/dash_web_carousel_section.dart';
-import 'package:nest_admin_app/views/dashboard_page/dashboard_web_page/widgets/dash_web_hotel_management.dart';
 import 'package:nest_admin_app/views/dashboard_page/widgets/analytics_overview.dart';
 import 'package:nest_admin_app/views/dashboard_page/widgets/calender_section.dart';
+import 'package:nest_admin_app/views/dashboard_page/widgets/dash_web_carousel_section.dart';
+import 'package:nest_admin_app/views/dashboard_page/widgets/dash_web_hotel_management.dart';
 import 'package:nest_admin_app/views/dashboard_page/widgets/dash_web_quick_status.dart';
 
 class DashboardMobPageMain extends StatelessWidget {

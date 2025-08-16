@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nest_admin_app/views/dashboard/widgets/verification_drop_down.dart';
+import 'package:nest_admin_app/views/hotel_detail_pages/widgets/verification_dropdown.dart';
 
 class PageHeader extends StatelessWidget {
   final String hotelName;
